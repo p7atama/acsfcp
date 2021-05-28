@@ -6,8 +6,6 @@ import Content from "./Content";
 const Home = () => (
   <Fragment>
     <Hero />
-    <hr />
-    <Content />
   </Fragment>
 );
 
