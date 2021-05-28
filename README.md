@@ -1,2 +1,2 @@
 # ascfcp
-Anti Counterfeting System for Clothing Products
+Anti Counterfeiting System for Clothing Products
