@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './App.css';
 import Acsfcp from '../abis/Acsfcp.json';
-import { Container } from './Container';
+//import { Container } from './Container';
 import Web3 from 'web3'
 import {
   BrowserRouter as Router,
@@ -10,10 +10,10 @@ import {
   Link,
   useParams
 } from "react-router-dom";
-import TableDropdown from "./TableDropdown.js";
+//import TableDropdown from "./TableDropdown.js";
 import Loading from "./Loading";
-import ReactToPrint from 'react-to-print';
-import { Print } from './Print';
+//import ReactToPrint from 'react-to-print';
+//import { Print } from './Print';
 const triggerText = 'QR Code';
 const web3 = new Web3(new Web3.providers.HttpProvider("https://kovan.infura.io/v3/19148326cb674857b80044d7d6876ad3"));
 var address = "0x8cf7be6a443eafed3e89d439d6e389542732384d";

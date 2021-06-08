@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import Web3 from 'web3'
 import Acsfcp from '../abis/Acsfcp.json'
-import Navbar from './NavBar'
 import Main from './Main'
 import Show from './Show'
 import Loading from "./Loading";
-import queryString from 'query-string'
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from 'react-router-dom';
 const web3 = new Web3(new Web3.providers.HttpProvider("https://kovan.infura.io/v3/19148326cb674857b80044d7d6876ad3"));
 var address = "0x8cf7be6a443eafed3e89d439d6e389542732384d";

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Redirect } from "react-router-dom";
-import Admin from './Admin';
+//import { Redirect } from "react-router-dom";
+//import Admin from './Admin';
 import './App.css';
 import Loading from "./Loading";
 
-import { Container } from './Container';
-import TableDropdown from "./TableDropdown.js";
+//import { Container } from './Container';
+//import TableDropdown from "./TableDropdown.js";
 const triggerText = 'QR Code';
 const color = "light";
   const onSubmit = (event) => {
