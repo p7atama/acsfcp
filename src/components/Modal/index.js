@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
+import ReactToPrint from 'react-to-print';
+
 // import { Form } from '../Form';
 import FocusTrap from 'focus-trap-react';
 import Hashids from 'hashids';
@@ -11,7 +13,13 @@ var QRCode = require('qrcode.react');
 // console.log(hashids.decode(encryptid))
 // const decryptid = hashids.decode(encryptid)
 var stringID,encryptid,numberID
-
+function myFunction() {
+  window.print()
+}
+function printDiv(divName) {
+  
+  window.print();
+}
 export const Modal = ({
   onClickOutside,
   onKeyDown,
@@ -22,8 +30,12 @@ export const Modal = ({
   
 }) => {
   
+  const componentRef = useRef();
+  
   return ReactDOM.createPortal(
+    
     <FocusTrap>
+     
       <aside
         tag="aside"
         role="dialog"
@@ -33,8 +45,7 @@ export const Modal = ({
         onClick={onClickOutside}
         onKeyDown={onKeyDown}
       >
-        {stringID = forwardID.toString(),
-             numberID = Number(stringID),encryptid = hashids.encode(numberID)}
+        
         <div className="modal-area" ref={modalRef}>
           <button
             ref={buttonRef}
@@ -51,8 +62,13 @@ export const Modal = ({
             </svg>
           </button>
           <div className="modal-body">
-          <p align='center'><QRCode value={'https://0090bcd0612a.ngrok.io/?page=show&id=' + encryptid} /></p>
+          <div id="printableArea">
+          <p id="section-to-print" align='center'><QRCode value={'https://0090bcd0612a.ngrok.io/?page=show&id=' + encryptid} /></p>
+</div>
+          
             {/* <Form onSubmit={onSubmit} /> */}
+            <button onClick={printDiv('printableArea')} value="print a div!"> Print</button>
+     
           </div>
         </div>
       </aside>

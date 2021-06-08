@@ -4,6 +4,7 @@ import Acsfcp from '../abis/Acsfcp.json'
 import Navbar from './NavBar'
 import Main from './Main'
 import Show from './Show'
+import Loading from "./Loading";
 import queryString from 'query-string'
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from 'react-router-dom';
 const web3 = new Web3(new Web3.providers.HttpProvider("https://kovan.infura.io/v3/19148326cb674857b80044d7d6876ad3"));
@@ -124,12 +125,12 @@ class Root extends Component {
   render() {
     return (
       <div>
-        <Navbar account={this.state.account} />
+       
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex">
               { this.state.loading
-                ? <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
+                ? <Loading />
                 : [this.state.page == "show" ?
                 <Show
                   cloths={this.state.cloths}

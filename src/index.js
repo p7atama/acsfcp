@@ -6,6 +6,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import history from "./components/utils/history";
 import { getConfig } from "./components/config";
 import "./components/assets/styles/tailwind.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./index.css";
 
 const onRedirectCallback = (appState) => {
