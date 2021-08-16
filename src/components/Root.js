@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import Web3 from 'web3'
 import Acsfcp from '../abis/Acsfcp.json'
+import diom from '../abis/diomimg.json';
 import Main from './Main'
 import Show from './Show'
 import Loading from "./Loading";
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from 'react-router-dom';
 const web3 = new Web3(new Web3.providers.HttpProvider("https://kovan.infura.io/v3/19148326cb674857b80044d7d6876ad3"));
-var address = "0x8cf7be6a443eafed3e89d439d6e389542732384d";
-var contract = new web3.eth.Contract(Acsfcp.abi, address);
+// var address = "0x8cf7be6a443eafed3e89d439d6e389542732384d";
+// var address = "0xd1c5547e0ef3e822095e5ba0c6366d256fac7586";
+ var address = "0x611Fa63AAD98A57Ff096034335E5c96a1D223e0C";
+
+var contract = new web3.eth.Contract(diom.abi, address);
 
 class Root extends Component {
 
@@ -40,9 +44,9 @@ class Root extends Component {
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
-    const networkData = Acsfcp.networks[networkId]
+    const networkData = diom.networks[networkId]
     if(networkData) {
-      const acsfcp = web3.eth.Contract(Acsfcp.abi, networkData.address)
+      const acsfcp = web3.eth.Contract(diom.abi, networkData.address)
       this.setState({ acsfcp })
       console.log("acsfcp di main : ",acsfcp)
       const productCount = await acsfcp.methods.productCount().call()
@@ -65,7 +69,7 @@ class Root extends Component {
   async loadBlockchainData2() {
     console.log("loadBlockchainData2")
 
-    const acsfcp = web3.eth.Contract(Acsfcp.abi, address)
+    const acsfcp = web3.eth.Contract(diom.abi, address)
 
     this.setState({ acsfcp })
     const productCount = await contract.methods.productCount().call()
@@ -100,20 +104,13 @@ class Root extends Component {
     
   }
 
-  createCloth(name, shop_name, size, material, tipe) {
+  createCloth(name, shop_name, size, material, tipe, hashImage) {
     this.setState({ loading: true })
-    this.state.acsfcp.methods.createCloth(name, shop_name, size, material, tipe).send({ from: this.state.account })
+    this.state.acsfcp.methods.createCloth(name, shop_name, size, material, tipe, hashImage).send({ from: this.state.account })
     .once('receipt', (receipt) => {
+      console.log("Data berhasil di simpan pada jaringan ethereum")
       this.setState({ loading: false })
     })
-    //.once('receipt', (receipt) => {this.setState({ loading: false })}
-    
-    //setTimeout(() => {  window.location.reload() }, 10000);
-    // function test(){
-    //   this.setState({ loading: false })
-    // } .on("receipt", function () {
-      //   console.log("Receipt");
-      // })
     }
     
 

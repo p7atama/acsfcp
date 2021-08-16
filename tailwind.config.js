@@ -97,6 +97,7 @@ module.exports = {
   ],
   plugins: [
     require("@tailwindcss/forms"),
+    require("@babel/plugin-proposal-optional-chaining"),
     plugin(function ({ addComponents, theme }) {
       const screens = theme("screens", {});
       addComponents([

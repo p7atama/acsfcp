@@ -1,5 +1,5 @@
-const acsfcp = artifacts.require("acsfcp");
+const diomimg = artifacts.require("diomimg");
 
 module.exports = function(deployer) {
-  deployer.deploy(acsfcp);
+  deployer.deploy(diomimg);
 };

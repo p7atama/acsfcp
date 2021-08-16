@@ -5,7 +5,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 // components
 
-import PagesDropdown from ".//PagesDropdown.js";
 
 export default function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +33,7 @@ export default function Navbar(props) {
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
-              onClick={() => loginWithRedirect()}
+              onClick={() => loginWithRedirect().then(console.log("Fungsi loginWithRedirect dijalankan"))}
             >
               <i className="text-white fas fa-bars"></i>
             </button>
