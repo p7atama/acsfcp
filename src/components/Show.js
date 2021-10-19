@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Acsfcp from '../abis/Acsfcp.json'
+import Acsfcp from '../abis/diomcloth.json'
 import queryString from 'query-string'
 import Hashids from 'hashids';
 var hashids = new Hashids('Anti Counterfeting System for Clothing Products')
 const Web3 = require('web3');
 const web3 = new Web3(new Web3.providers.HttpProvider("https://kovan.infura.io/v3/19148326cb674857b80044d7d6876ad3"));
-var address = "0xBC18bA5A47334Fe42C2C3AfbF9e57CE85C92A45e";
+var address = "0x214b8f9a482707bb95c949509870468faeb8819a";
  //this command is working
 
 

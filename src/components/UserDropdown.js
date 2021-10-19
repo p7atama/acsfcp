@@ -8,9 +8,6 @@ const UserDropdown = () => {
   const btnDropdownRef = React.createRef();
   const popoverDropdownRef = React.createRef();
   const {
-    user,
-    isAuthenticated,
-    loginWithRedirect,
     logout,
   } = useAuth0();
   const logoutWithRedirect = () =>

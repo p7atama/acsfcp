@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Web3 from 'web3'
-import Acsfcp from '../abis/Acsfcp.json'
-import diom from '../abis/diomimg.json';
+import diom from '../abis/diomcloth.json';
 import Main from './Main'
 import Show from './Show'
 import Loading from "./Loading";
@@ -9,7 +8,7 @@ import { BrowserRouter as Router, Switch, Route, Link, useParams } from 'react-r
 const web3 = new Web3(new Web3.providers.HttpProvider("https://kovan.infura.io/v3/19148326cb674857b80044d7d6876ad3"));
 // var address = "0x8cf7be6a443eafed3e89d439d6e389542732384d";
 // var address = "0xd1c5547e0ef3e822095e5ba0c6366d256fac7586";
- var address = "0x611Fa63AAD98A57Ff096034335E5c96a1D223e0C";
+ var address = "0x214b8f9a482707bb95c949509870468faeb8819a";
 
 var contract = new web3.eth.Contract(diom.abi, address);
 

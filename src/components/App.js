@@ -1,9 +1,8 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import { Container } from "reactstrap";
 import Admin from "./Admin";
 import Loading from "./Loading";
-import { useAuth0, Auth0Provider } from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 import Print from "./Print";
 // styles
@@ -50,7 +49,7 @@ const App = () => {
             
           </Switch>
       </div>
-      </Router>
+      </Router> 
   );
 };
 };
